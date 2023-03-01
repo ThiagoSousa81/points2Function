@@ -17,10 +17,20 @@ class points2Function(object):
 
     def __calculateSlope(self, x1: float, y1: float, x2: float, y2: float):
         self.__slope = (y2 - y1)/(x2-x1)
+        print (self.__slope)
     def __calculateIntercept(self, x: float, y: float):
         self.__intercept = (-1* self.__slope * x) + y
+        print (self.__intercept)
 
     def function(self, x: float):
         return (self.__slope * x) + self.__intercept
     def inverse(self, y: float):
         return (y - self.__intercept)/self.__slope
+
+p2f = points2Function()
+p2f.__init__( 2.0, 5.0, 8.0, 3.0 )
+
+
+
+print(p2f.function(5.0))
+print(p2f.inverse(4.0))
